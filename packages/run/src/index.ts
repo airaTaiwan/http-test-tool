@@ -86,7 +86,8 @@ async function init() {
 
   exec(`HOST=${ipv4} ${command}`)
 
-  consola.success(`\nDone. Now running on http://${ipv4}:3000`)
+  consola.success(`Done. Now running on http://${ipv4}:3000`)
+
   open(`http://${ipv4}:3000`)
 }
 
