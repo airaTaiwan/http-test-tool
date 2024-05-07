@@ -28,7 +28,7 @@ HTTP Test Tool
 
 > [!IMPORTANT]
 >
-> Install [Node.js](https://nodejs.org/en) version 18.3 or higher.
+> Install [Node.js](https://nodejs.org/en) version 18.3 or lts.
 
 ### User
 
