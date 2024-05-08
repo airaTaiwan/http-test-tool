@@ -16,25 +16,16 @@ import {
   yellow,
 } from 'kolorist'
 
-type KoloristColor = (text: string) => string
+const koloristColors: KoloristColor[] = [
+  blue,
+  cyan,
+  green,
+  lightBlue,
+  lightGreen,
+  yellow,
+]
 
-/**
- * 從 koloristColor 陣列中隨機選擇一種顏色。
- * @returns {KoloristColor} 返回一種隨機顏色函數。
- */
-function randomKoloristColor(): KoloristColor {
-  const koloristColors: KoloristColor[] = [
-    blue,
-    cyan,
-    green,
-    lightBlue,
-    lightGreen,
-    lightRed,
-    magenta,
-    yellow,
-  ]
-  return koloristColors[Math.floor(Math.random() * koloristColors.length)]
-}
+type KoloristColor = (text: string) => string
 
 /**
  * 檢索當前機器的 IPv4 地址。
@@ -92,8 +83,8 @@ async function init() {
       name: 'ipv4',
       message: reset('Select an ip to start server:'),
       initial: 0,
-      choices: getIPv4Addresses().map((ip) => {
-        const Color = randomKoloristColor()
+      choices: getIPv4Addresses().map((ip, idx) => {
+        const Color = koloristColors[idx % koloristColors.length]
         return {
           title: Color(ip),
           value: ip,
