@@ -1,7 +1,7 @@
 {
   "name": "http-test-tool-run",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "airaTaiwan <jack.liao@aira.com.tw>",
   "license": "MIT",
   "homepage": "https://github.com/airaTaiwan/http-test-tool#readme",
