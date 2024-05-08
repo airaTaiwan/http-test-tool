@@ -30,9 +30,9 @@ function toggleDark() {
       i-ph-sun-dim-duotone dark:i-ph-moon-stars-duotone ml1 text-xl op50 hover:op75
       @click="toggleDark()"
     />
-    <NuxtLink
+    <!-- <NuxtLink
       href="https://github.com/airaTaiwan/http-test-tool" target="_blank"
       i-carbon-logo-github text-lg op50 hover:op75
-    />
+    /> -->
   </div>
 </template>
