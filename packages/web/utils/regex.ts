@@ -1,10 +1,17 @@
+const regexBase64 = /^[A-Za-z0-9+/]+={0,2}$/
+const regexImageOrImg = /\b(img|image)\b/i
+const regexURLQuery = /\?/
+const regexURLExtensions = /\.(svg|ico|vue)$/i
+const regexURLNuxt = /_nuxt/
+const regexURLLocalhost = /localhost/
+
 /**
  * 检查 URL 是否没有带查询参数。
  * @param url 要检查的 URL 字符串。
  * @returns 返回 true 如果 URL 没有带查询参数，否则返回 false。
  */
 export function checkURLHasNoQuery(url: string): boolean {
-  return !/\?/.test(url) // 正则表达式来检查 URL 中是否不包含 '?' 符号
+  return !regexURLQuery.test(url)
 }
 
 /**
@@ -13,8 +20,7 @@ export function checkURLHasNoQuery(url: string): boolean {
  * @returns 返回 true 如果 URL 包含 .svg .ico .vue  擴展名，否則返回 false。
  */
 export function checkURLForExtensions(url: string): boolean {
-  const pattern = /\.(svg|ico|vue)$/i // 正則表達式來檢查 URL 結尾部分是否包含 .svg .ico .vue
-  return pattern.test(url)
+  return regexURLExtensions.test(url)
 }
 
 /**
@@ -23,8 +29,7 @@ export function checkURLForExtensions(url: string): boolean {
  * @returns 返回 true 如果 URL 包含 `_nuxt`，否則返回 false。
  */
 export function checkURLForNuxt(url: string): boolean {
-  const pattern = /_nuxt/ // 正則表達式來檢查 URL 是否包含 `_nuxt`
-  return pattern.test(url)
+  return regexURLNuxt.test(url)
 }
 
 /**
@@ -33,8 +38,7 @@ export function checkURLForNuxt(url: string): boolean {
  * @returns 返回 true 如果 URL 包含 'localhost'，否則返回 false。
  */
 export function checkURLForLocalhost(url: string): boolean {
-  const pattern = /localhost/ // 正則表達式來檢查 URL 是否包含 'localhost'
-  return pattern.test(url)
+  return regexURLLocalhost.test(url)
 }
 
 /**
@@ -46,9 +50,7 @@ export function isValidBase64<T = string>(str: T): boolean {
   if (typeof str !== 'string')
     return false
 
-  // 正則表達式匹配有效的 Base64 編碼數據
-  const regex = /^[A-Za-z0-9+/]+={0,2}$/
-  return regex.test(str)
+  return regexBase64.test(str)
 }
 
 /**
@@ -60,7 +62,5 @@ export function containsImageOrImg<T = string>(str: T): boolean {
   if (typeof str !== 'string')
     return false
 
-  // 正則表達式匹配 "image" 或 "img"
-  const regex = /\b(img|image)\b/i
-  return regex.test(str)
+  return regexImageOrImg.test(str)
 }
