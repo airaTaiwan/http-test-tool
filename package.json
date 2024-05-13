@@ -6,6 +6,7 @@
   "packageManager": "pnpm@9.1.0",
   "scripts": {
     "test": "vitest",
+    "play": "npm -C packages/web run dev",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "build": "pnpm --filter './packages/**' build",
