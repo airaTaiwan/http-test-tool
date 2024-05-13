@@ -2,6 +2,7 @@
   "name": "http-test-tool",
   "type": "module",
   "version": "0.0.3",
+  "packageManager": "pnpm@9.1.0",
   "description": "HTTP request testing tool supporting GET and POST methods",
   "author": "airaTaiwan <jack.liao@aira.com.tw>",
   "license": "MIT",
@@ -19,9 +20,6 @@
     "get",
     "post"
   ],
-  "engines": {
-    "node": "^18.0.0 || >=20.13.0"
-  },
   "scripts": {
     "build": "nuxi build",
     "dev": "nuxi dev --host",
@@ -35,16 +33,16 @@
     "floating-vue": "^5.2.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.16.2",
+    "@antfu/eslint-config": "^2.17.0",
     "@iconify-json/carbon": "^1.1.32",
     "@iconify-json/ph": "^1.1.13",
-    "@nuxt/eslint": "^0.3.10",
+    "@nuxt/eslint": "^0.3.12",
     "@nuxt/image": "^1.7.0",
     "@nuxtjs/color-mode": "^3.4.1",
     "@pinia/nuxt": "^0.5.1",
     "@types/ws": "^8.5.10",
-    "@unocss/eslint-config": "^0.59.4",
-    "@unocss/nuxt": "^0.59.4",
+    "@unocss/eslint-config": "^0.60.0",
+    "@unocss/nuxt": "^0.60.0",
     "@vueuse/nuxt": "^10.9.0",
     "better-sqlite3": "^9.6.0",
     "bumpp": "^9.4.1",

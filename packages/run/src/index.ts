@@ -9,8 +9,6 @@ import {
   green,
   lightBlue,
   lightGreen,
-  lightRed,
-  magenta,
   red,
   reset,
   yellow,
