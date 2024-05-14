@@ -1,7 +1,7 @@
-const regexBase64 = /^[A-Za-z0-9+/]+={0,2}$/
-const regexImageOrImg = /\b(img|image)\b/i
+const regexBase64 = /^[A-Z0-9+/]+={0,2}$/i
+const regexImageOrImg = /\bimg|image\b/i
 const regexURLQuery = /\?/
-const regexURLExtensions = /\.(svg|ico|vue)$/i
+const regexURLExtensions = /\.svg|ico|vue$/i
 const regexURLNuxt = /_nuxt/
 const regexURLLocalhost = /localhost/
 
