@@ -54,7 +54,7 @@ const { data } = useWebSocket(`ws://${host}/api/ws`, {
         </div>
       </div>
 
-      <Item :index="0" name="Source Data" :value="urlData.data" />
+      <Item name="Source Data" no-color :index="0" :value="urlData.data" />
 
       <template v-for="(value, name, index) of urlData.data" :key="name">
         <Item
@@ -65,7 +65,5 @@ const { data } = useWebSocket(`ws://${host}/api/ws`, {
       </template>
     </div>
   </div>
-  <div v-else font-mono>
-    ...Loading
-  </div>
+  <Loading v-else />
 </template>

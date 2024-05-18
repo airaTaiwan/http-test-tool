@@ -25,6 +25,14 @@ function toggleDark() {
       <div i-ph-stack-duotone flex-none />
       Configs
     </NuxtLink>
+    <NuxtLink
+      to="/history"
+      px3 py1 text-base btn-action
+      active-class="btn-action-active"
+    >
+      <div i-ph-files-duotone flex-none />
+      History
+    </NuxtLink>
     <button
       title="Toggle Dark Mode"
       i-ph-sun-dim-duotone dark:i-ph-moon-stars-duotone ml1 text-xl op50 hover:op75

@@ -11,18 +11,49 @@ export function migrateDatabase() {
   )`
 }
 
+/**
+ *
+ * @param url 新增的 URL
+ * @param event Get / Post
+ * @param data 附加的資料
+ */
 export async function addUrl(url: string, event: string, data: Record<string, any>) {
   const db = useDatabase()
 
   await db.sql`INSERT INTO urls (url, event, data) VALUES (${url}, ${event}, ${JSON.stringify(data)})`
 }
 
-export async function getUrls(count = 5) {
+/**
+ * 返回指定數量資料 or 返回所有資料
+ * @param count 指定數量
+ */
+export async function getUrlsByCount(count?: number): Promise<Data[]> {
   const db = useDatabase()
-  const { rows }: { rows: Data[] } = await db.sql`SELECT * FROM urls ORDER BY created_at ASC LIMIT ${count}`
+
+  if (count) {
+    const { rows }: { rows: Data[] } = await db.sql`SELECT * FROM urls ORDER BY created_at ASC LIMIT ${count}`
+    return rows
+  }
+  else {
+    const { rows }: { rows: Data[] } = await db.sql`SELECT * FROM urls ORDER BY created_at ASC`
+    return rows
+  }
+}
+
+/**
+ * 返回指定日期之前的 URL
+ * @param date 指定日期
+ */
+export async function getUrlsByDate(date: string): Promise<Data[]> {
+  const db = useDatabase()
+
+  const { rows }: { rows: Data[] } = await db.sql`SELECT * FROM urls WHERE created_at < ${date} ORDER BY created_at ASC`
   return rows
 }
 
+/**
+ * 獲取最新的 URL
+ */
 export async function getLatestUrl() {
   const db = useDatabase()
 

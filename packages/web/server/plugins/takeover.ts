@@ -1,5 +1,6 @@
 import { addUrl } from '../utils/database'
 import {
+  checkURLForAPI,
   checkURLForExtensions,
   checkURLForLocalhost,
   checkURLForNuxt,
@@ -12,7 +13,7 @@ enum METHOD {
 }
 
 function checkGetUrl(url: string): boolean {
-  return checkURLHasNoQuery(url) || checkURLForExtensions(url) || checkURLForNuxt(url) || checkURLForLocalhost(url)
+  return checkURLForAPI(url) || checkURLHasNoQuery(url) || checkURLForExtensions(url) || checkURLForNuxt(url) || checkURLForLocalhost(url)
 }
 
 function parseGetUrl(url: string): Record<string, any> {
