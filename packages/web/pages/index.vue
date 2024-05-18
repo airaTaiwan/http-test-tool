@@ -1,31 +1,12 @@
 <script setup lang="ts">
-import type { Data, ParseData } from '~/types'
+const dataStore = useDataStore()
 
-const userStore = useUserStore()
-
-const { lastUpdateTime } = storeToRefs(userStore)
-
-const urlData = ref<Data>()
-
-const host = import.meta.server ? 'localhost:3000' : location?.host ?? 'localhost:3000'
-
-const { data } = useWebSocket(`ws://${host}/api/ws`, {
-  onMessage: () => {
-    const parsedData = JSON.parse(data.value) as ParseData
-
-    urlData.value = {
-      ...parsedData,
-      data: JSON.parse(parsedData.data),
-    }
-
-    lastUpdateTime.value = urlData.value.created_at
-  },
-})
+const { urlData } = storeToRefs(dataStore)
 </script>
 
 <template>
   <div v-if="urlData">
-    <div flex="~ col gap-3" py4>
+    <div flex="~ col gap-3" my4>
       <div relative flex class="group">
         <input
           v-model="urlData.url"
@@ -33,7 +14,7 @@ const { data } = useWebSocket(`ws://${host}/api/ws`, {
           border="~ base rounded-full"
 
           disabled w-full bg-transparent px10 py2 outline-none
-          :class="data ? 'font-mono' : ''"
+          :class="urlData.data ? 'font-mono' : ''"
         >
         <div absolute bottom-0 left-0 top-0 flex="~ items-center justify-center" p4 op50>
           <div i-carbon-link />

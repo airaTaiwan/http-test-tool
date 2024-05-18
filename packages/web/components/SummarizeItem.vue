@@ -1,9 +1,9 @@
 <script setup lang="ts">
 defineProps<{
   icon: string
-  number?: number
   color: string
   title: string
+  number?: number
 }>()
 </script>
 
@@ -16,7 +16,7 @@ defineProps<{
       :auto-hide="true"
     >
       <div
-        flex="~ gap-2"
+        flex="~ items-center gap-2"
         :class="color"
       >
         <div :class="icon" />

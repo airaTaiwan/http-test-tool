@@ -39,7 +39,7 @@ if (!hasShown.value) {
     </summary>
 
     <div v-if="hasShown" flex="~ col gap-4" relative of-auto px4 py3>
-      <template v-if="typeof value === 'object'">
+      <template v-if="!Array.isArray(value) && typeof value === 'object'">
         <SourceData :code="value" />
         <Copy absolute bottom-0 right-0 top-0 op50 :text="JSON.stringify(value, null, 4)" />
       </template>

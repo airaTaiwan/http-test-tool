@@ -37,16 +37,17 @@ if (!hasShown.value) {
           <div flex="~ auto">
             <ColorizedName :name="url" />
           </div>
-          <div flex="~ gap-2 items-start wrap">
+          <div flex="~ gap-2 items-center wrap">
             <SummarizeItem
               icon="i-carbon-information"
-              color="text-blue5 dark:text-blue4"
+              color="text-sky"
               :title="event"
             />
             <SummarizeItem
               icon="i-carbon-data-1"
-              color="text-blue5 dark:text-blue4"
-              :title="event"
+              color="text-sky"
+              title="Param"
+              :number="Object.keys(data).length"
             />
           </div>
         </div>
