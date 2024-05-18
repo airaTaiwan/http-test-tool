@@ -84,9 +84,6 @@ importers:
       '@iconify-json/carbon':
         specifier: ^1.1.33
         version: 1.1.33
-      '@iconify-json/ph':
-        specifier: ^1.1.13
-        version: 1.1.13
       '@nuxt/eslint':
         specifier: ^0.3.12
         version: 0.3.13(eslint@9.2.0)(nuxt@3.11.2(@opentelemetry/api@1.8.0)(@parcel/watcher@2.4.1)(@types/node@20.11.24)(@unocss/reset@0.60.2)(better-sqlite3@9.6.0)(encoding@0.1.13)(eslint@9.2.0)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.17.2))(vue@3.4.21(typescript@5.4.5)))(ioredis@5.4.1)(optionator@0.9.3)(rollup@4.17.2)(terser@5.31.0)(typescript@5.4.5)(unocss@0.60.2(@unocss/webpack@0.60.2(rollup@4.17.2)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.11.24)(terser@5.31.0)))(vite@5.2.11(@types/node@20.11.24)(terser@5.31.0))(vue-tsc@2.0.19(typescript@5.4.5)))(rollup@4.17.2)(typescript@5.4.5)(vite@5.2.11(@types/node@20.11.24)(terser@5.31.0))
@@ -769,9 +766,6 @@ packages:
 
   '@iconify-json/carbon@1.1.33':
     resolution: {integrity: sha512-TsjyOqhqMhIEdUnteGPMoKvbY1SIsM8A4sASHIg+YiKoDGWqlwD/g4pLXoAoVj3NL3E1hRxoTIY1oqpndXIxvg==}
-
-  '@iconify-json/ph@1.1.13':
-    resolution: {integrity: sha512-xtM4JJ63HCKj09WRqrBswXiHrpliBlqboWSZH8odcmqYXbvIFceU9/Til4V+MQr6+MoUC+KB72cxhky2+A6r/g==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -6455,10 +6449,6 @@ snapshots:
   '@humanwhocodes/retry@0.2.4': {}
 
   '@iconify-json/carbon@1.1.33':
-    dependencies:
-      '@iconify/types': 2.0.0
-
-  '@iconify-json/ph@1.1.13':
     dependencies:
       '@iconify/types': 2.0.0
 

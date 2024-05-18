@@ -32,14 +32,19 @@ if (!hasShown.value) {
         #{{ index }}
       </div>
       <div flex="~ gap-2 wrap items-center" cursor-pointer select-none bg-hover px2 py2 text-sm font-mono>
-        <div class="[details[open]_&]:rotate-90" i-ph-caret-right text-base op50 transition />
+        <div class="[details[open]_&]:rotate-90" i-carbon-chevron-right text-base op50 transition />
         <div flex="~ col items-center auto gap-3 md:row">
           <div flex="~ auto">
             <ColorizedName :name="url" />
           </div>
           <div flex="~ gap-2 items-start wrap">
             <SummarizeItem
-              icon="i-ph-info"
+              icon="i-carbon-information"
+              color="text-blue5 dark:text-blue4"
+              :title="event"
+            />
+            <SummarizeItem
+              icon="i-carbon-data-1"
               color="text-blue5 dark:text-blue4"
               :title="event"
             />

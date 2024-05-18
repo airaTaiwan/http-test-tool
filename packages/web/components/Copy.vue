@@ -17,7 +17,7 @@ const { copy, copied } = useClipboard({
       :shown="copied"
       :auto-hide="true"
     >
-      <div i-ph:copy :class="copied ? 'text-green' : ''" />
+      <div i-carbon-copy :class="copied ? 'text-green' : ''" />
       <template #popper>
         <p m2 text-sm text-green font-mono>
           已複製

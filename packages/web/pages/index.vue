@@ -36,7 +36,7 @@ const { data } = useWebSocket(`ws://${host}/api/ws`, {
           :class="data ? 'font-mono' : ''"
         >
         <div absolute bottom-0 left-0 top-0 flex="~ items-center justify-center" p4 op50>
-          <div i-ph:link-simple-light />
+          <div i-carbon-link />
         </div>
 
         <Copy absolute bottom-0 right-0 top-0 op0 transition-opacity group-hover:op100 flex="~ items-center justify-center" :text="urlData.url" />
@@ -48,7 +48,7 @@ const { data } = useWebSocket(`ws://${host}/api/ws`, {
             flex="~ gap-2 items-center wrap"
             border="~ sky/20 rounded-full" bg-sky:10 px3 py1
           >
-            <div i-ph-info text-sky />
+            <div i-carbon-information text-sky />
             {{ urlData.event }}
           </div>
         </div>
