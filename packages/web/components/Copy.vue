@@ -10,20 +10,19 @@ const { copy, copied } = useClipboard({
 
 <template>
   <div cursor-pointer p4 @click="copy(text)">
-    <div i-ph:copy :class="copied ? 'text-green' : ''">
-      <VDropdown
-        placement="top"
-        :distance="10"
-        :triggers="[]"
-        :shown="copied"
-        :auto-hide="false"
-      >
-        <template #popper>
-          <p m2 text-sm text-green font-mono>
-            已複製！
-          </p>
-        </template>
-      </VDropdown>
-    </div>
+    <VDropdown
+      placement="top"
+      :distance="10"
+      :triggers="[]"
+      :shown="copied"
+      :auto-hide="true"
+    >
+      <div i-ph:copy :class="copied ? 'text-green' : ''" />
+      <template #popper>
+        <p m2 text-sm text-green font-mono>
+          已複製
+        </p>
+      </template>
+    </VDropdown>
   </div>
 </template>

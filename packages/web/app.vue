@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { appName } from '~/constants'
 
-import '../style/global.css'
+import './style/global.css'
 
 useHead({
   title: appName,

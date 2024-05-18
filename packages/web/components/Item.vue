@@ -23,8 +23,7 @@ if (!hasShown.value) {
 
 <template>
   <details
-    class="flat-config-item"
-    :open="open"
+    :open
     border="~ rounded-lg base" relative
     @toggle="open = $event.target.open"
   >

@@ -48,6 +48,7 @@ export async function getUrlsByDate(date: string): Promise<Data[]> {
   const db = useDatabase()
 
   const { rows }: { rows: Data[] } = await db.sql`SELECT * FROM urls WHERE created_at < ${date} ORDER BY created_at ASC`
+  console.log('rows', rows)
   return rows
 }
 

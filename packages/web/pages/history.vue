@@ -22,7 +22,7 @@ const parsedData = computed(() => {
     <ClientOnly>
       <div flex="~ col gap-3" py4>
         <template v-for="item, index of parsedData" :key="item.id">
-          <Item :index :name="item.url" :value="item.data" />
+          <HistoryItem :index v-bind="item" />
         </template>
       </div>
     </ClientOnly>
