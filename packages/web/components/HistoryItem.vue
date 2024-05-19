@@ -56,6 +56,14 @@ if (!hasShown.value) {
     </summary>
 
     <div v-if="hasShown" flex="~ col gap-4" relative of-auto px4 py3>
+      <div flex="~ gap-2 items-center">
+        <div i-carbon-calendar flex-none />
+        <div>Create Date :</div>
+        <div>
+          <span badge>{{ created_at }}</span>
+        </div>
+      </div>
+
       <SourceData :code="data" />
       <Copy absolute bottom-0 right-0 top-0 op50 :text="JSON.stringify(data, null, 4)" />
     </div>
