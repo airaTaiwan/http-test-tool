@@ -64,8 +64,12 @@ if (!hasShown.value) {
         </div>
       </div>
 
-      <SourceData :code="data" />
-      <Copy absolute bottom-0 right-0 top-0 op50 :text="JSON.stringify(data, null, 4)" />
+      <Shiki
+        lang="ts"
+        :code="stringifyUnquoted(data)"
+        max-h-100 max-w-full w-full of-scroll rounded bg-code p2 text-sm
+      />
+      <Copy absolute bottom-0 right-0 top-0 op50 :text="JSON.stringify(data, null, 2)" />
     </div>
   </details>
 </template>
